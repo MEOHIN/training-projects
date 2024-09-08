@@ -5,6 +5,21 @@
     <title>TimeTrainer</title>
 </head>
 <body>
-    <H2>Hello, World!</H2>
+    <table>
+        <thead>
+            <tr>
+                <th>제목</th>
+                <th>예상 시간</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="task: ${task_list}">
+                <td th:text="${task.subject}"></td>
+                <td th:text="${task.estimatedAt}"></td>
+                <td th:text="${task.description}"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

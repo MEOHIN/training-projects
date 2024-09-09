@@ -1,25 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>TimeTrainer</title>
-</head>
-<body>
-    <table>
-        <thead>
-            <tr>
-                <th>제목</th>
-                <th>예상 시간</th>
-                <th>설명</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="task: ${task_list}">
-                <td th:text="${task.subject}"></td>
-                <td th:text="${task.estimatedAt}"></td>
-                <td th:text="${task.description}"></td>
-            </tr>
-        </tbody>
-    </table>
-</body>
+<!-- layout.html 템플릿 상속 -->
+<html layout:decorate="~{layout}">
+<!-- 부모 템플릿 th:block 엘리먼트 내용을 자식 템플릿의 div 엘리먼트 내용으로 교체 -->
+    <div layout:fragment="content" class="rootContainer">
+        <div class="mainContainer">
+            <table>
+                <thead>
+                    <tr>
+                        <th>제목</th>
+                        <th>예상 시간</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="task: ${task_list}">
+                        <td th:text="${task.subject}"></td>
+                        <td th:text="${task.estimatedAt}"></td>
+                        <td th:text="${task.description}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </html>

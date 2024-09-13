@@ -13,6 +13,7 @@ public class SpringSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeHttpRequests((authorizeHttpRequests) -> {
             authorizeHttpRequests.requestMatchers("/sign/in").permitAll();
+            authorizeHttpRequests.requestMatchers("/sign/up").permitAll();
             authorizeHttpRequests.requestMatchers("/style.css").permitAll();
             authorizeHttpRequests.anyRequest().authenticated();
         });

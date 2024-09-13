@@ -12,12 +12,12 @@ public class SpringSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeHttpRequests((authorizeHttpRequests) -> {
-            authorizeHttpRequests.requestMatchers("/login").permitAll();
+            authorizeHttpRequests.requestMatchers("/sign/in").permitAll();
             authorizeHttpRequests.requestMatchers("/style.css").permitAll();
             authorizeHttpRequests.anyRequest().authenticated();
         });
 
-        httpSecurity.formLogin((formLogin) -> formLogin.loginPage("/login"));
+        httpSecurity.formLogin((formLogin) -> formLogin.loginPage("/sign/in"));
         httpSecurity.logout((logout) -> logout.logoutRequestMatcher(new AntPathRequestMatcher("/logout")));
 
         return httpSecurity.build();

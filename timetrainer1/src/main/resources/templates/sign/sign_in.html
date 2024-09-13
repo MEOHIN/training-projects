@@ -4,7 +4,7 @@
             <header>
                 <h1>TimeTrainer 시작하기</h1>
             </header>
-            <form th:action="@{/signin}" method="post">
+            <form th:action="@{/sign/in}" method="post">
                 <div>
                     <label for="ueserId">아이디</label>
                     <input type="text" name="username" id="ueserId">
@@ -15,7 +15,7 @@
                 </div>
                 <input type="submit" value="로그인">
             </form>
-            <form th:action="@{/signup}" method="get">
+            <form th:action="@{/sign/up}" method="get">
                 <button type="submit">회원가입</button>
             </form>
         </div>

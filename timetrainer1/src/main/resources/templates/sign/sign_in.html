@@ -1,0 +1,23 @@
+<html layout:decorate="~{layout}">
+    <div layout:fragment="content" class="rootContainer">
+        <div class="mainContainer">
+            <header>
+                <h1>TimeTrainer 시작하기</h1>
+            </header>
+            <form th:action="@{/signin}" method="post">
+                <div>
+                    <label for="ueserId">아이디</label>
+                    <input type="text" name="username" id="ueserId">
+                </div>
+                <div>
+                    <label for="pw">비밀번호</label>
+                    <input type="password" name="password" id="pw">
+                </div>
+                <input type="submit" value="로그인">
+            </form>
+            <form th:action="@{/signup}" method="get">
+                <button type="submit">회원가입</button>
+            </form>
+        </div>
+    </div>
+</html>

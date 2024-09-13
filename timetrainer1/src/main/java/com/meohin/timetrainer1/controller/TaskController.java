@@ -23,6 +23,6 @@ public class TaskController {
     public String list(Model model) {
         List<Task> taskList = taskService.getTaskList();
         model.addAttribute("task_list", taskList);
-        return "task_list";
+        return "/task/task_list";
     }
 }
